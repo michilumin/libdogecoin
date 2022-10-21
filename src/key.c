@@ -158,7 +158,7 @@ void dogecoin_pubkey_get_hash160(const dogecoin_pubkey* pubkey, uint160 hash160)
 
 dogecoin_bool dogecoin_pubkey_get_hex(const dogecoin_pubkey* pubkey, char* str, size_t* strsize)
 {
-    if (*strsize < DOGECOIN_ECKEY_COMPRESSED_LENGTH * 2)
+    if (*strsize < DOGECOIN_ECKEY_COMPRESSED_LENGTH * 2 + 1)
         return false;
     utils_bin_to_hex((unsigned char*)pubkey->pubkey, DOGECOIN_ECKEY_COMPRESSED_LENGTH, str);
     *strsize = DOGECOIN_ECKEY_COMPRESSED_LENGTH * 2;
@@ -202,7 +202,7 @@ dogecoin_bool dogecoin_key_sign_recover_pubkey(const unsigned char* sig, const u
     return 1;
 }
 
-dogecoin_bool dogecoin_pubkey_verify_sig(const dogecoin_pubkey* pubkey, const uint256 hash, unsigned char* sigder, int len)
+dogecoin_bool dogecoin_pubkey_verify_sig(const dogecoin_pubkey* pubkey, const uint256 hash, unsigned char* sigder, size_t len)
 {
     return dogecoin_ecc_verify_sig(pubkey->pubkey, pubkey->compressed, hash, sigder, len);
 }

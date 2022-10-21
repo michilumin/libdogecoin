@@ -64,7 +64,7 @@ dogecoin_bool addresses_from_pubkey(const dogecoin_chainparams* chain, const cha
     dogecoin_pubkey_init(&pubkey);
     pubkey.compressed = 1;
     size_t outlen = 0;
-    utils_hex_to_bin(pubkey_hex, pubkey.pubkey, strlen(pubkey_hex), (int*)&outlen);
+    utils_hex_to_bin(pubkey_hex, pubkey.pubkey, strlen(pubkey_hex), &outlen);
     assert(dogecoin_pubkey_is_valid(&pubkey) == 1);
     dogecoin_pubkey_getaddr_p2pkh(&pubkey, chain, p2pkh_address);
     return true;
@@ -182,7 +182,7 @@ dogecoin_bool hd_print_node(const dogecoin_chainparams* chain, const char* nodes
     }
     printf("depth:               %d\n", node.depth);
     printf("child index:         %d\n", node.child_num);
-    char addr[34];
+    char addr[34 + 1];
     addresses_from_pubkey(&dogecoin_chainparams_main, str, addr);
     printf("p2pkh address:       %s\n", addr);
     return true;

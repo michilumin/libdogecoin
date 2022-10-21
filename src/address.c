@@ -47,6 +47,14 @@
 #include <dogecoin/base58.h>
 #include <dogecoin/tool.h>
 #include <dogecoin/utils.h>
+#include <dogecoin/mem.h>
+
+#define MAX_INT32_STRINGLEN 12
+#define HD_MASTERKEY_STRINGLEN 112
+#define P2PKH_ADDR_STRINGLEN 35
+#define WIF_UNCOMPRESSED_PRIVKEY_STRINGLEN 53
+#define DERIVED_PATH_STRINGLEN 33 
+/* NOTE: Path string composed of m/44/3/+32bits_Account+/+bool_ischange+/+32bits_Address + string terminator; for a total of 33 bytes. */
 
 /**
  * @brief This function generates a new basic public-private
@@ -61,17 +69,18 @@
 int generatePrivPubKeypair(char* wif_privkey, char* p2pkh_pubkey, bool is_testnet)
 {
     /* internal variables */
-    size_t privkey_len = 53;
-    size_t pubkey_len = 35;
-    char wif_privkey_internal[privkey_len];
-    char p2pkh_pubkey_internal[pubkey_len];
+
+    char wif_privkey_internal[WIF_UNCOMPRESSED_PRIVKEY_STRINGLEN]; //MLUMIN: Keylength (51 or 52 chars, depending on uncompressed or compressed) +1 for string termination 'internally'? 
+    char p2pkh_pubkey_internal[P2PKH_ADDR_STRINGLEN]; //MLUMIN: no magic numbers. p2pkh address should be 34 characters, +1 though for string termination 'internally'?
+    size_t privkey_len = sizeof(wif_privkey_internal);
+
 
     /* if nothing is passed in use internal variables */
     if (wif_privkey) {
-        memcpy_safe(wif_privkey_internal, wif_privkey, privkey_len);
+        memcpy_safe(wif_privkey_internal, wif_privkey, sizeof(wif_privkey_internal));
     }
     if (p2pkh_pubkey) {
-        memcpy_safe(p2pkh_pubkey_internal, p2pkh_pubkey, pubkey_len);
+        memcpy_safe(p2pkh_pubkey_internal, p2pkh_pubkey, sizeof(p2pkh_pubkey_internal));
     }
 
     /* determine if mainnet or testnet/regtest */
@@ -93,10 +102,10 @@ int generatePrivPubKeypair(char* wif_privkey, char* p2pkh_pubkey, bool is_testne
     dogecoin_pubkey_getaddr_p2pkh(&pubkey, chain, p2pkh_pubkey_internal);
 
     if (wif_privkey) {
-        memcpy_safe(wif_privkey, wif_privkey_internal, privkey_len);
+        memcpy_safe(wif_privkey, wif_privkey_internal, sizeof(wif_privkey_internal));
     }
     if (p2pkh_pubkey) {
-        memcpy_safe(p2pkh_pubkey, p2pkh_pubkey_internal, pubkey_len);
+        memcpy_safe(p2pkh_pubkey, p2pkh_pubkey_internal, sizeof(p2pkh_pubkey_internal));
     }
 
     /* reset internal variables */
@@ -122,38 +131,36 @@ int generatePrivPubKeypair(char* wif_privkey, char* p2pkh_pubkey, bool is_testne
  */
 int generateHDMasterPubKeypair(char* wif_privkey_master, char* p2pkh_pubkey_master, bool is_testnet)
 {
-    size_t strsize = 128;
-    size_t hd_pubkey_master_len = 35;
-    char hd_privkey_master[strsize];
-    char hd_pubkey_master[hd_pubkey_master_len];
+    char hd_privkey_master[HD_MASTERKEY_STRINGLEN];
+    char hd_pubkey_master[P2PKH_ADDR_STRINGLEN];
 
     /* if nothing is passed use internal variables */
     if (wif_privkey_master) {
-        memcpy_safe(hd_privkey_master, wif_privkey_master, strsize);
+        memcpy_safe(hd_privkey_master, wif_privkey_master, sizeof(hd_privkey_master));
     }
     if (p2pkh_pubkey_master) {
-        memcpy_safe(hd_pubkey_master, p2pkh_pubkey_master, hd_pubkey_master_len);
+        memcpy_safe(hd_pubkey_master, p2pkh_pubkey_master, sizeof(hd_pubkey_master));
     }
 
     /* determine if mainnet or testnet/regtest */
     const dogecoin_chainparams* chain = is_testnet ? &dogecoin_chainparams_test : &dogecoin_chainparams_main;
 
     /* generate a new hd master key */
-    hd_gen_master(chain, hd_privkey_master, strsize);
+    if (!hd_gen_master(chain, hd_privkey_master, sizeof(hd_privkey_master))) {
+        return false;
+    }
 
-    generateDerivedHDPubkey(hd_privkey_master, hd_pubkey_master);
+    if (!generateDerivedHDPubkey(hd_privkey_master, hd_pubkey_master)) {
+        return false;
+    }
 
     if (wif_privkey_master) {
-        memcpy_safe(wif_privkey_master, hd_privkey_master, strlen(hd_privkey_master));
+        memcpy_safe(wif_privkey_master, hd_privkey_master, sizeof(hd_privkey_master));
     }
     if (p2pkh_pubkey_master) {
-        memcpy_safe(p2pkh_pubkey_master, hd_pubkey_master, strlen(hd_pubkey_master));
+        memcpy_safe(p2pkh_pubkey_master, hd_pubkey_master, sizeof(hd_pubkey_master));
     }
 
-    /* reset internal variables */
-    dogecoin_mem_zero(hd_privkey_master, strlen(hd_privkey_master));
-    dogecoin_mem_zero(hd_privkey_master, strlen(hd_privkey_master));
-    
     return true;
 }
 
@@ -178,22 +185,21 @@ int generateDerivedHDPubkey(const char* wif_privkey_master, char* p2pkh_pubkey)
     /* determine address prefix for network chainparams */
     const dogecoin_chainparams* chain = chain_from_b58_prefix(wif_privkey_master);
 
-    size_t strsize = 128;
-    char str[strsize];
+    char str[P2PKH_ADDR_STRINGLEN];
 
     /* if nothing is passed in use internal variables */
     if (p2pkh_pubkey) {
-        memcpy_safe(str, p2pkh_pubkey, strsize);
+        memcpy_safe(str, p2pkh_pubkey, sizeof(str));
     }
 
     dogecoin_hdnode* node = dogecoin_hdnode_new();
     dogecoin_hdnode_deserialize(wif_privkey_master, chain, node);
 
-    dogecoin_hdnode_get_p2pkh_address(node, chain, str, strsize);
+    dogecoin_hdnode_get_p2pkh_address(node, chain, str, sizeof(str));
 
     /* pass back to external variable if exists */
     if (p2pkh_pubkey) {
-        memcpy_safe(p2pkh_pubkey, str, strsize);
+        memcpy_safe(p2pkh_pubkey, str, sizeof(str));
     }
 
     /* reset internal variables */
@@ -220,14 +226,15 @@ int verifyPrivPubKeypair(char* wif_privkey, char* p2pkh_pubkey, bool is_testnet)
 
     /* set chain */
     const dogecoin_chainparams* chain = is_testnet ? &dogecoin_chainparams_test : &dogecoin_chainparams_main;
-    size_t sizeout = 100;
 
     /* verify private key */
     dogecoin_key key;
     dogecoin_privkey_init(&key);
     dogecoin_privkey_decode_wif(wif_privkey, chain, &key);
     if (!dogecoin_privkey_is_valid(&key)) return false;
-    char new_wif_privkey[sizeout];
+
+    char new_wif_privkey[WIF_UNCOMPRESSED_PRIVKEY_STRINGLEN];
+    size_t sizeout = sizeof(new_wif_privkey);
     dogecoin_privkey_encode_wif(&key, chain, new_wif_privkey, &sizeout);
 
     /* verify public key */
@@ -237,12 +244,17 @@ int verifyPrivPubKeypair(char* wif_privkey, char* p2pkh_pubkey, bool is_testnet)
     if (!dogecoin_pubkey_is_valid(&pubkey)) return false;
 
     /* verify address derived matches provided address */
-    char new_p2pkh_pubkey[sizeout];
+    char* new_p2pkh_pubkey = dogecoin_char_vla(sizeout);
     dogecoin_pubkey_getaddr_p2pkh(&pubkey, chain, new_p2pkh_pubkey);
-    if (strcmp(p2pkh_pubkey, new_p2pkh_pubkey)) return false;
+    if (strcmp(p2pkh_pubkey, new_p2pkh_pubkey))
+    { 
+        free(new_p2pkh_pubkey);
+        return false;
+    }
 
     dogecoin_pubkey_cleanse(&pubkey);
     dogecoin_privkey_cleanse(&key);
+    free(new_p2pkh_pubkey);
     return true;
 }
 
@@ -267,9 +279,8 @@ int verifyHDMasterPubKeypair(char* wif_privkey_master, char* p2pkh_pubkey_master
     /* calculate master pubkey from master privkey */
     dogecoin_hdnode node;
     dogecoin_hdnode_deserialize(wif_privkey_master, chain, &node);
-    size_t sizeout = 128;
-    char new_p2pkh_pubkey_master[sizeout];
-    dogecoin_hdnode_get_p2pkh_address(&node, chain, new_p2pkh_pubkey_master, sizeout);
+    char new_p2pkh_pubkey_master[HD_MASTERKEY_STRINGLEN];
+    dogecoin_hdnode_get_p2pkh_address(&node, chain, new_p2pkh_pubkey_master, sizeof(new_p2pkh_pubkey_master));
 
     /* compare derived and given pubkeys */
     if (strcmp(p2pkh_pubkey_master, new_p2pkh_pubkey_master)) return false;
@@ -286,18 +297,99 @@ int verifyHDMasterPubKeypair(char* wif_privkey_master, char* p2pkh_pubkey_master
  * 
  * @return 1 if it is a valid Dogecoin address, 0 otherwise.
  */
-int verifyP2pkhAddress(char* p2pkh_pubkey, uint8_t len) {
-    if (!p2pkh_pubkey || !len) return false;
-    /* check length */
-    unsigned char dec[len], d1[SHA256_DIGEST_LENGTH], d2[SHA256_DIGEST_LENGTH];
-    if (!dogecoin_base58_decode_check(p2pkh_pubkey, dec, len)) {
-        return false;
-    }
+int verifyP2pkhAddress(char* p2pkh_pubkey, size_t len)
+    {
+        if (!p2pkh_pubkey || !len) return false;
+        /* check length */
+        unsigned char* dec = dogecoin_uchar_vla(len);
+        unsigned char d1[SHA256_DIGEST_LENGTH];
+        unsigned char d2[SHA256_DIGEST_LENGTH];
+        if (!dogecoin_base58_decode_check(p2pkh_pubkey, dec, len)) 
+        {
+            free(dec);
+            return false;
+        }
     /* check validity */
     sha256_raw(dec, 21, d1);
     sha256_raw(d1, SHA256_DIGEST_LENGTH, d2);
-    if (memcmp(dec + 21, d2, 4) != 0) {
+    if (memcmp(dec + 21, d2, 4) != 0) 
+    {
+        free(dec);
         return false;
     }
+    free(dec);
     return true;
+}
+
+/**
+ * @brief This function generates a derived child key from a masterkey using
+ * a custom derived path in string format.
+ * 
+ * @param masterkey The master key from which children are derived from.
+ * @param derived_path The path to derive an address from according to BIP-44.
+ * e.g. m/44'/3'/1'/1/1 representing m/44'/3'/account'/ischange/index
+ * @param outaddress The derived address.
+ * @param outprivkey The boolean value used to derive either a public or 
+ * private address. 'true' for private, 'false' for public
+ * 
+ * @return 1 if a derived address was successfully generated, 0 otherwise
+ */
+int getDerivedHDAddressByPath(const char* masterkey, const char* derived_path, char* outaddress, bool outprivkey) {
+    if (!masterkey || !derived_path || !outaddress) {
+        debug_print("%s", "missing input\n");
+        return false;
+    }
+
+    /* determine if mainnet or testnet/regtest */
+    const dogecoin_chainparams* chain = chain_from_b58_prefix(masterkey);
+    bool ret = true;
+    dogecoin_hdnode node, nodenew;
+    
+    if (!dogecoin_hdnode_deserialize(masterkey, chain, &node)) {
+        ret = false;
+    }
+    
+    // dogecoin_hdnode_has_privkey
+    bool pubckd = !dogecoin_hdnode_has_privkey(&node);
+    /* derive child key, use pubckd or privckd */
+    if (!dogecoin_hd_generate_key(&nodenew, derived_path, pubckd ? node.public_key : node.private_key, node.chain_code, pubckd)) {
+        ret = false;
+    }
+
+    if (outprivkey) dogecoin_hdnode_serialize_private(&nodenew, chain, outaddress, HD_MASTERKEY_STRINGLEN);
+    else dogecoin_hdnode_serialize_public(&nodenew, chain, outaddress, HD_MASTERKEY_STRINGLEN);
+    return ret;
+}
+
+/**
+ * @brief This function generates a derived child address from a masterkey using
+ * a BIP44 standardized static, non hardened path comprised of an account, a change or
+ * receiving address and an address index.
+ * 
+ * @param masterkey The master key from which children are derived from.
+ * @param account The account that the derived address would belong to.
+ * @param ischange Boolean value representing either a change or receiving address.
+ * @param addressindex The index of the receiving/change address per account.
+ * @param outaddress The derived address.
+ * @param outprivkey The boolean value used to derive either a public or 
+ * private address. 'true' for private, 'false' for public
+ * 
+ * @return 1 if a derived address was successfully generated, 0 otherwise.
+ */
+int getDerivedHDAddress(const char* masterkey, uint32_t account, bool ischange, uint32_t addressindex, char* outaddress, bool outprivkey) {
+        if (!masterkey) {
+            debug_print("%s", "no extended key\n");
+            return false;
+        }
+
+        char derived_path[DERIVED_PATH_STRINGLEN];
+        int derived_path_size = snprintf(derived_path, sizeof(derived_path), "m/44'/3'/%u'/%u/%u", account, ischange, addressindex);
+
+        if (derived_path_size >= (int)sizeof(derived_path)) {
+            debug_print("%s", "derivation path overflow\n");
+            return false;
+        }
+
+        int ret = getDerivedHDAddressByPath(masterkey, derived_path, outaddress, outprivkey);
+        return ret;
 }

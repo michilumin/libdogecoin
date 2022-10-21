@@ -100,10 +100,10 @@ void utils_clear_buffers(void)
  *
  * @return Nothing.
  */
-void utils_hex_to_bin(const char* str, unsigned char* out, int inLen, int* outLen)
+void utils_hex_to_bin(const char* str, unsigned char* out, size_t inLen, size_t* outLen)
     {
-    int bLen = inLen / 2;
-    int i;
+    size_t bLen = inLen / 2;
+    size_t i;
     dogecoin_mem_zero(out, bLen);
     for (i = 0; i < bLen; i++) {
         if (str[i * 2] >= '0' && str[i * 2] <= '9') {
@@ -210,6 +210,7 @@ char* utils_uint8_to_hex(const uint8_t* bin, size_t l)
     if (l > (TO_UINT8_HEX_BUF_LEN / 2 - 1)) {
         return NULL;
     }
+
     dogecoin_mem_zero(buffer_uint8_to_hex, TO_UINT8_HEX_BUF_LEN);
     for (i = 0; i < l; i++) {
         buffer_uint8_to_hex[i * 2] = digits[(bin[i] >> 4) & 0xF];
@@ -229,10 +230,10 @@ char* utils_uint8_to_hex(const uint8_t* bin, size_t l)
  *
  * @return Nothing.
  */
-void utils_reverse_hex(char* h, int len)
+void utils_reverse_hex(char* h, size_t len)
     {
     char* copy = dogecoin_calloc(1, len);
-    int i;
+    size_t i;
     memcpy_safe(copy, h, len);
     for (i = 0; i < len - 1; i += 2) {
         h[i] = copy[len - i - 2];
@@ -350,10 +351,10 @@ void* safe_malloc(size_t size)
  *
  * @return Nothing.
  */
-void dogecoin_cheap_random_bytes(uint8_t* buf, uint32_t len)
+    void dogecoin_cheap_random_bytes(uint8_t* buf, size_t len)
     {
     srand(time(NULL)); // insecure
-    for (uint32_t i = 0; i < len; i++) {
+    for (size_t i = 0; i < len; i++) {
         buf[i] = rand(); // weak non secure cryptographic rng
         }
     }
@@ -483,7 +484,7 @@ void prepend(char* s, const char* t)
  */
 void append(char* s, char* t)
     {
-    int i = 0, length = 0;
+    size_t i = 0, length = 0;
     /* get length of char* s */
     for (; memcmp(&s[i], "\0", 1) != 0; i++) length++;
 
@@ -502,8 +503,8 @@ void append(char* s, char* t)
  * @param output
  */
 void text_to_hex(char* in, char* out) {
-    int length = 0;
-    int i = 0;
+    size_t length = 0;
+    size_t i = 0;
 
     while (in[length] != '\0') {
         sprintf((char*)(out + i), "%02X", in[length]);
@@ -526,3 +527,33 @@ const char* get_build() {
             return "UNKNOWN";
         #endif
     }
+
+/* reverse:  reverse string s in place */
+void dogecoin_str_reverse(char s[])
+{
+    size_t i, j;
+    char c;
+
+    for (i = 0, j = strlen(s)-1; i<j; i++, j--) {
+        c = s[i];
+        s[i] = s[j];
+        s[j] = c;
+    }
+}  
+
+/* itoa:  convert n to characters in s */
+void dogecoin_uitoa(int n, char s[])
+{
+    int i, sign;
+
+    if ((sign = n) < 0)  /* record sign */
+        n = -n;          /* make n positive */
+    i = 0;
+    do {       /* generate digits in reverse order */
+        s[i++] = n % 10 + '0';   /* get next digit */
+    } while ((n /= 10) > 0);     /* delete it */
+    if (sign < 0)
+        s[i++] = '-';
+    s[i] = '\0';
+    dogecoin_str_reverse(s);
+}
