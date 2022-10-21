@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\DogeRepos\libevent\build\CMakeFiles\d3165c66453fa6e06eb07b6ba467ec54\Nightly.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\DogeRepos\libevent\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\DogeRepos\libevent\build\CMakeFiles\Nightly" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FB3878B8-CE9C-3B70-9251-47BC94C661FF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

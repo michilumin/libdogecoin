@@ -1,0 +1,10 @@
+^E:\DOGEREPOS\LIBEVENT\BUILD\CMAKEFILES\D3165C66453FA6E06EB07B6BA467EC54\RUN_TESTS_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

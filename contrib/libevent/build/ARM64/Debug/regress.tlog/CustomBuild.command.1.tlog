@@ -1,0 +1,24 @@
+^E:\DOGEREPOS\LIBEVENT\BUILD\CMAKEFILES\DD12B3D3D988D0F34D80DBA97622B636\REGRESS.GEN.C.RULE
+setlocal
+cd E:\DogeRepos\libevent\test
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\python.exe" ../event_rpcgen.py --quiet regress.rpc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\DOGEREPOS\LIBEVENT\CMAKELISTS.TXT
+setlocal
+E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SE:/DogeRepos/libevent -BE:/DogeRepos/libevent/build --check-stamp-file E:/DogeRepos/libevent/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

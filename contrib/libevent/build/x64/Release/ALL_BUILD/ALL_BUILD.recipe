@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\bench.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\bench_cascade.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\bench_http.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\bench_httpclient.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\dns-example.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\event-read-fifo.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\hello-world.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\http-connect.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\http-server.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\regress.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\signal-test.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-changelist.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-closed.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-dumpevents.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-eof.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-fdleak.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-init.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-ratelim.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-time.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\test-weof.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\bin\Release\time-test.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>E:\DogeRepos\libevent\build\x64\Release\ALL_BUILD</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

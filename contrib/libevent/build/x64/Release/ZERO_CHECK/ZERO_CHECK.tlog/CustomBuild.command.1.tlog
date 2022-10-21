@@ -1,0 +1,10 @@
+^E:\DOGEREPOS\LIBEVENT\BUILD\CMAKEFILES\D3165C66453FA6E06EB07B6BA467EC54\GENERATE.STAMP.RULE
+setlocal
+E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SE:/DogeRepos/libevent -BE:/DogeRepos/libevent/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/DogeRepos/libevent/build/libevent.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

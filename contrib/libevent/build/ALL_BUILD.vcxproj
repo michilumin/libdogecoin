@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FF648501-E7B0-3144-8D81-59595B0B9F18}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\DogeRepos\libevent\build\include;E:\DogeRepos\libevent\include;E:\DogeRepos\libevent\compat;E:\DogeRepos\libevent;E:\DogeRepos\libevent\.\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\DogeRepos\libevent\build\include;E:\DogeRepos\libevent\include;E:\DogeRepos\libevent\compat;E:\DogeRepos\libevent;E:\DogeRepos\libevent\.\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\DogeRepos\libevent\build\include;E:\DogeRepos\libevent\include;E:\DogeRepos\libevent\compat;E:\DogeRepos\libevent;E:\DogeRepos\libevent\.\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\DogeRepos\libevent\build\include;E:\DogeRepos\libevent\include;E:\DogeRepos\libevent\compat;E:\DogeRepos\libevent;E:\DogeRepos\libevent\.\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\DogeRepos\libevent\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/DogeRepos/libevent/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">Building Custom Rule E:/DogeRepos/libevent/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SE:/DogeRepos/libevent -BE:/DogeRepos/libevent/build --check-stamp-file E:/DogeRepos/libevent/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">setlocal
+E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SE:/DogeRepos/libevent -BE:/DogeRepos/libevent/build --check-stamp-file E:/DogeRepos/libevent/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake;E:\DogeRepos\libevent\cmake\AddCompilerFlags.cmake;E:\DogeRepos\libevent\cmake\AddEventLibrary.cmake;E:\DogeRepos\libevent\cmake\CheckConstExists.cmake;E:\DogeRepos\libevent\cmake\CheckFileOffsetBits.cmake;E:\DogeRepos\libevent\cmake\CheckFunctionKeywords.cmake;E:\DogeRepos\libevent\cmake\CheckPrototypeDefinition.cmake;E:\DogeRepos\libevent\cmake\LibeventConfig.cmake.in;E:\DogeRepos\libevent\cmake\LibeventConfigVersion.cmake.in;E:\DogeRepos\libevent\cmake\Macros.cmake;E:\DogeRepos\libevent\cmake\Uninstall.cmake.in;E:\DogeRepos\libevent\cmake\VersionViaGit.cmake;E:\DogeRepos\libevent\evconfig-private.h.cmake;E:\DogeRepos\libevent\event-config.h.cmake;E:\DogeRepos\libevent\libevent.pc.in;E:\DogeRepos\libevent\libevent_core.pc.in;E:\DogeRepos\libevent\libevent_extra.pc.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTest.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestTargets.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestUseLaunchers.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckStructHasMember.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckSymbolExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckTypeSize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckVariableExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\DartConfiguration.tcl.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindGit.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPythonInterp.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake;E:\DogeRepos\libevent\cmake\AddCompilerFlags.cmake;E:\DogeRepos\libevent\cmake\AddEventLibrary.cmake;E:\DogeRepos\libevent\cmake\CheckConstExists.cmake;E:\DogeRepos\libevent\cmake\CheckFileOffsetBits.cmake;E:\DogeRepos\libevent\cmake\CheckFunctionKeywords.cmake;E:\DogeRepos\libevent\cmake\CheckPrototypeDefinition.cmake;E:\DogeRepos\libevent\cmake\LibeventConfig.cmake.in;E:\DogeRepos\libevent\cmake\LibeventConfigVersion.cmake.in;E:\DogeRepos\libevent\cmake\Macros.cmake;E:\DogeRepos\libevent\cmake\Uninstall.cmake.in;E:\DogeRepos\libevent\cmake\VersionViaGit.cmake;E:\DogeRepos\libevent\evconfig-private.h.cmake;E:\DogeRepos\libevent\event-config.h.cmake;E:\DogeRepos\libevent\libevent.pc.in;E:\DogeRepos\libevent\libevent_core.pc.in;E:\DogeRepos\libevent\libevent_extra.pc.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTest.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestTargets.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestUseLaunchers.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckStructHasMember.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckSymbolExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckTypeSize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckVariableExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\DartConfiguration.tcl.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindGit.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPythonInterp.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\DogeRepos\libevent\build\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">E:\DogeRepos\libevent\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/DogeRepos/libevent/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Building Custom Rule E:/DogeRepos/libevent/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SE:/DogeRepos/libevent -BE:/DogeRepos/libevent/build --check-stamp-file E:/DogeRepos/libevent/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">setlocal
+E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SE:/DogeRepos/libevent -BE:/DogeRepos/libevent/build --check-stamp-file E:/DogeRepos/libevent/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake;E:\DogeRepos\libevent\cmake\AddCompilerFlags.cmake;E:\DogeRepos\libevent\cmake\AddEventLibrary.cmake;E:\DogeRepos\libevent\cmake\CheckConstExists.cmake;E:\DogeRepos\libevent\cmake\CheckFileOffsetBits.cmake;E:\DogeRepos\libevent\cmake\CheckFunctionKeywords.cmake;E:\DogeRepos\libevent\cmake\CheckPrototypeDefinition.cmake;E:\DogeRepos\libevent\cmake\LibeventConfig.cmake.in;E:\DogeRepos\libevent\cmake\LibeventConfigVersion.cmake.in;E:\DogeRepos\libevent\cmake\Macros.cmake;E:\DogeRepos\libevent\cmake\Uninstall.cmake.in;E:\DogeRepos\libevent\cmake\VersionViaGit.cmake;E:\DogeRepos\libevent\evconfig-private.h.cmake;E:\DogeRepos\libevent\event-config.h.cmake;E:\DogeRepos\libevent\libevent.pc.in;E:\DogeRepos\libevent\libevent_core.pc.in;E:\DogeRepos\libevent\libevent_extra.pc.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTest.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestTargets.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestUseLaunchers.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckStructHasMember.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckSymbolExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckTypeSize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckVariableExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\DartConfiguration.tcl.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindGit.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPythonInterp.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeRCCompiler.cmake;E:\DogeRepos\libevent\build\CMakeFiles\3.22.22022201-MSVC_2\CMakeSystem.cmake;E:\DogeRepos\libevent\cmake\AddCompilerFlags.cmake;E:\DogeRepos\libevent\cmake\AddEventLibrary.cmake;E:\DogeRepos\libevent\cmake\CheckConstExists.cmake;E:\DogeRepos\libevent\cmake\CheckFileOffsetBits.cmake;E:\DogeRepos\libevent\cmake\CheckFunctionKeywords.cmake;E:\DogeRepos\libevent\cmake\CheckPrototypeDefinition.cmake;E:\DogeRepos\libevent\cmake\LibeventConfig.cmake.in;E:\DogeRepos\libevent\cmake\LibeventConfigVersion.cmake.in;E:\DogeRepos\libevent\cmake\Macros.cmake;E:\DogeRepos\libevent\cmake\Uninstall.cmake.in;E:\DogeRepos\libevent\cmake\VersionViaGit.cmake;E:\DogeRepos\libevent\evconfig-private.h.cmake;E:\DogeRepos\libevent\event-config.h.cmake;E:\DogeRepos\libevent\libevent.pc.in;E:\DogeRepos\libevent\libevent_core.pc.in;E:\DogeRepos\libevent\libevent_extra.pc.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeCommonLanguageInclude.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeGenericSystem.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeInitializeConfigs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeLanguageInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeParseArguments.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeRCInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInformation.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CMakeSystemSpecificInitialize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTest.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestTargets.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CTestUseLaunchers.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFile.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckStructHasMember.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckSymbolExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckTypeSize.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\CheckVariableExists.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Compiler\MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\DartConfiguration.tcl.in;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindGit.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPackageMessage.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindPythonInterp.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\FindZLIB.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckCompilerFlag.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Internal\CheckSourceCompiles.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC-C.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows-MSVC.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\Windows.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\Platform\WindowsPaths.cmake;E:\installs\VS2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\DogeRepos\libevent\build\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">E:\DogeRepos\libevent\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\ZERO_CHECK.vcxproj">
+      <Project>{C23747EC-96F2-3461-8964-AE8CE19A1440}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\bench.vcxproj">
+      <Project>{15352F26-7F05-3B00-9AD2-186263747A5C}</Project>
+      <Name>bench</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\bench_cascade.vcxproj">
+      <Project>{1A0576DE-E307-385D-A720-E21C6C638231}</Project>
+      <Name>bench_cascade</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\bench_http.vcxproj">
+      <Project>{D4611117-FCE6-3426-8727-60D43B42387F}</Project>
+      <Name>bench_http</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\bench_httpclient.vcxproj">
+      <Project>{EBFC0CEE-E4E0-3509-BB7A-36E64A8F781E}</Project>
+      <Name>bench_httpclient</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\dns-example.vcxproj">
+      <Project>{D3DABCAB-AF0F-37DA-8608-0EF3F7F89F97}</Project>
+      <Name>dns-example</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\event-read-fifo.vcxproj">
+      <Project>{7DB2D476-98BB-3486-9531-726A4F0234BB}</Project>
+      <Name>event-read-fifo</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\event_core_static.vcxproj">
+      <Project>{380BD829-2B1B-37CA-92A4-2B2173966FA1}</Project>
+      <Name>event_core_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\event_extra_static.vcxproj">
+      <Project>{B5489249-6655-3732-A131-EA8CA3773C55}</Project>
+      <Name>event_extra_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\event_static.vcxproj">
+      <Project>{B68B7A62-921F-3C69-A171-4876234FB7AF}</Project>
+      <Name>event_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\hello-world.vcxproj">
+      <Project>{E69D2D31-1494-3312-A312-4CE7BF0730EB}</Project>
+      <Name>hello-world</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\http-connect.vcxproj">
+      <Project>{BBA48882-B6CE-366C-B1EC-08004320B70F}</Project>
+      <Name>http-connect</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\http-server.vcxproj">
+      <Project>{3620CBA2-AF13-3699-BB7C-1A9461347D43}</Project>
+      <Name>http-server</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\regress.vcxproj">
+      <Project>{B70E1606-5D9B-3FE3-A567-431CACA1AFBF}</Project>
+      <Name>regress</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\signal-test.vcxproj">
+      <Project>{08AA4ECD-3EF3-32EF-8250-D24C514E68B0}</Project>
+      <Name>signal-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-changelist.vcxproj">
+      <Project>{ED4F9408-F828-332A-B788-C91FFF392066}</Project>
+      <Name>test-changelist</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-closed.vcxproj">
+      <Project>{C79AF755-6D7B-3002-B710-2FBDD9CC2050}</Project>
+      <Name>test-closed</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-dumpevents.vcxproj">
+      <Project>{9A98B048-78C9-3922-AD47-852E78D2B076}</Project>
+      <Name>test-dumpevents</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-eof.vcxproj">
+      <Project>{9E3723D7-D7DA-3350-94C4-B1D96FB78BA6}</Project>
+      <Name>test-eof</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-fdleak.vcxproj">
+      <Project>{942801E0-3DE6-3503-B0AE-0034B32BF88F}</Project>
+      <Name>test-fdleak</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-init.vcxproj">
+      <Project>{EE6D74B9-90F4-32F8-83FB-C4A133848C70}</Project>
+      <Name>test-init</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-ratelim.vcxproj">
+      <Project>{AC65F331-3A7D-3742-93C6-C83ED8426269}</Project>
+      <Name>test-ratelim</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-time.vcxproj">
+      <Project>{06C94279-2C6C-3B37-810E-695763DF1C13}</Project>
+      <Name>test-time</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\test-weof.vcxproj">
+      <Project>{4E23955C-14AB-3406-87A1-AE1AAB335684}</Project>
+      <Name>test-weof</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\DogeRepos\libevent\build\time-test.vcxproj">
+      <Project>{253CBB22-AC02-3716-904A-D6518C27AE25}</Project>
+      <Name>time-test</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
