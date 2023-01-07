@@ -321,7 +321,6 @@ void test_bip39()
     /* iancoleman.io/bip39 */
 
     /* English with passphrase */
-
     debug_print ("\nTests of mnemonic seed generation (w/ passphrase)\n", NULL);
     dogecoin_seed_from_mnemonic (test_mnemonic_12, "TREZOR", seed);
     memcpy_safe(seed_test,

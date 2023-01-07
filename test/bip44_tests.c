@@ -38,7 +38,6 @@ void test_bip44()
     }
     memset(words, '\0', MAX_MNEMONIC_LENGTH);
 
-
     debug_print ("\nTests with known entropy values\n", NULL);
     dogecoin_generate_mnemonic ("128", "eng", " ", entropy, NULL, &length, words);
     u_assert_mem_eq(words, "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about", length);

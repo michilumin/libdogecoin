@@ -85,7 +85,6 @@ int get_mnemonic(const int entropysize, const char* entropy, const char* wordlis
     entropyBits[0] = '\0';
     dogecoin_mem_zero(entropyBits, entropysize + 1);  // Initialize entropyBits to all zeros
 
-
     char binaryByte[9] = "";
 
     /* OpenSSL */
